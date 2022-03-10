@@ -22,7 +22,7 @@ public class Main {
         String resource = "config.xml";
         InputStream inputStream = Resources.getResourceAsStream(resource);
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        sqlSessionFactory.openSession();
-
+        IUserDao userDao = sqlSessionFactory.openSession().getMapper(IUserDao.class);
+        System.out.println(userDao.selectById(1));
     }
 }
