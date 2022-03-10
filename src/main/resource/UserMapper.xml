@@ -9,7 +9,7 @@
     </resultMap>
 
     <select id="selectById" resultMap="userData">
-        select * from user where id = #{id}
+        SELECT * FROM USER WHERE ID = #{id}
     </select>
 
 
